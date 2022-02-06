@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Admin Menu">
+        <menu>
+            <item
+                android:id="@+id/admin_post_notice"
+                android:title="Publish a new notice"
+                app:showAsAction="always"/>
+        </menu>
+    </item>
+</menu>
