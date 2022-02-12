@@ -2,12 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="Admin Menu">
-        <menu>
-            <item
-                android:id="@+id/admin_post_notice"
-                android:title="Publish a new notice"
-                app:showAsAction="always"/>
-        </menu>
-    </item>
+        android:id="@+id/user_menu_inbox"
+        android:title="Inbox"
+        android:icon="@drawable/ic_baseline_inbox_24"/>
+    <item
+        android:id="@+id/user_menu_notices"
+        android:title="View Notices"
+        android:icon="@drawable/ic_baseline_notifications_24"/>
 </menu>

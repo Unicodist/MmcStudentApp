@@ -4,6 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_bg_1"
     tools:context=".LoginActivity">
 
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="348dp"
+        android:rotation="33"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ell" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="380dp"
+        android:rotation="218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ell" />
+
+    <TextView
+        android:id="@+id/login_layout_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="63dp"
+        android:fontFamily="@font/acme_regular"
+        android:text="Mmc Student App"
+        android:textColor="#103D78"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="@+id/login_layout_title"
+        app:layout_constraintTop_toBottomOf="@+id/login_layout_title" />
+
+
+    <EditText
+        android:id="@+id/login_form_phone"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/field_input_background"
+        android:paddingHorizontal="15dp"
+        android:hint="Phone"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/login_form_password"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/field_input_background"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_form_phone" />
+
+    <Button
+        android:id="@+id/login_submit"
+        android:layout_width="125dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/login_button_bg"
+        android:text="Log In"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/login_form_password"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="@+id/login_form_password"
+        app:layout_constraintTop_toBottomOf="@+id/login_form_password" />
 </androidx.constraintlayout.widget.ConstraintLayout>

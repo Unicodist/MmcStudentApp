@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item android:title="Admin Panel">
+        <menu>
+            <item
+                android:id="@+id/admin_menu_post_notice"
+                android:title="Broadcast a new notice"
+                android:icon="@drawable/ic_baseline_send_24"/>
+            <item
+                android:id="@+id/admin_menu_remove_user"
+                android:title="Remove a user"
+                android:icon="@drawable/ic_baseline_person_remove_24"
+                />
+        </menu>
+    </item>
 </menu>

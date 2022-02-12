@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382879140803",
+    "project_id": "mmc-student-app",
+    "storage_bucket": "mmc-student-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382879140803:android:f7d737613873daa084cb76",
+        "android_client_info": {
+          "package_name": "com.prabidhinepal.mmccomm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382879140803-avir413i9msvlp06en39t8edom5b43qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYfN9ctQ91OVAF8tHO-CfshCZKrXZeGfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382879140803-avir413i9msvlp06en39t8edom5b43qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

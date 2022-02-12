@@ -10,17 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MmcStudentApp">
         <activity
-            android:name=".LoginActivity"
+            android:name=".AuthFrontActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OtpPage"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfigureActivity"
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
