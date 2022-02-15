@@ -8,17 +8,21 @@
         <entry key="..\:/My Files/MmcStudentApp/app/src/main/res/menu/sidebar_menu_admin.xml" value="0.25" />
         <entry key="..\:/My Files/MmcStudentApp/app/src/main/res/menu/sidebar_menu_user.xml" value="0.25" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/app_bg_1.xml" value="0.2555" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/app_logo_1_background.xml" value="0.121" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/field_input_background.xml" value="0.2555" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/ic_baseline_person_remove_24.xml" value="0.121" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.121" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/login_button_bg.xml" value="0.2555" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/otp_field_bg.xml" value="0.121" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/signup_button_bg.xml" value="0.2555" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/drawable/toolbar_menu_badge_shape.xml" value="0.2265" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_auth_front.xml" value="0.25" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_configure.xml" value="0.25" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_login.xml" value="0.10989583333333333" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_otp_page.xml" value="0.264" />
-        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_register.xml" value="0.3715170278637771" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/activity_register.xml" value="0.2564102564102564" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/sidebar_header_layout.xml" value="0.10989583333333333" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/toolbar_main.xml" value="0.22826086956521738" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/layout/toolbar_menu_badged_item.xml" value="0.22826086956521738" />
@@ -26,6 +30,9 @@
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/menu/sidebar_menu_admin.xml" value="0.10989583333333333" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/menu/sidebar_menu_user.xml" value="0.10989583333333333" />
         <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/menu/toolbar_menu_main.xml" value="0.25" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/mipmap-anydpi-v26/app_logo_1_round.xml" value="0.121" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
+        <entry key="..\:/My Files/git repos/MmcStudentApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.121" />
       </map>
     </option>
   </component>

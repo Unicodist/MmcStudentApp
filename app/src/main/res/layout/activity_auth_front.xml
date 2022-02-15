@@ -18,7 +18,8 @@
         android:rotation="33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ell" />
+        app:srcCompat="@drawable/ell"
+        android:contentDescription="@string/background_gradient" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -29,7 +30,9 @@
         android:rotation="218"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ell" />
+        app:srcCompat="@drawable/ell"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/background_gradient"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -37,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
         android:fontFamily="@font/acme_regular"
-        android:text="Mmc Student App"
+        android:text="@string/app_name"
         android:textColor="#103D78"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Log In or Sign Up"
+        android:text="@string/log_in_or_sign_up"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,10 +63,10 @@
     <Button
         android:id="@+id/auth_front_login_button"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/login_button_bg"
-        android:text="Log In"
+        android:text="@string/log_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,10 +75,10 @@
     <Button
         android:id="@+id/auth_front_signup_button"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/signup_button_bg"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="@+id/auth_front_login_button"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/auth_front_login_button"

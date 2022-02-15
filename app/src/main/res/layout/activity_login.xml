@@ -17,6 +17,7 @@
         android:rotation="33"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/background_gradient"
         app:srcCompat="@drawable/ell" />
 
     <ImageView
@@ -27,6 +28,7 @@
         android:rotation="218"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/background_gradient"
         app:srcCompat="@drawable/ell" />
 
     <TextView
@@ -36,7 +38,7 @@
         android:layout_marginStart="17dp"
         android:layout_marginTop="63dp"
         android:fontFamily="@font/acme_regular"
-        android:text="Mmc Student App"
+        android:text="@string/app_name"
         android:textColor="#103D78"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,51 +48,53 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:textColor="@color/white"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/login_layout_title"
         app:layout_constraintTop_toBottomOf="@+id/login_layout_title" />
 
 
-    <EditText
-        android:id="@+id/login_form_phone"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="76dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="Phone"
-        android:inputType="textPersonName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_form_tl_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:helperText="Required"
+        app:helperTextEnabled="false"
+        app:counterMaxLength="10"
+        app:counterEnabled="true"
+        app:helperTextTextColor="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
 
-    <EditText
-        android:id="@+id/login_form_password"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/field_input_background"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        android:paddingHorizontal="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_form_phone" />
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/login_form_phone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:maxLength="10"
+            android:background="@drawable/field_input_background"
+            android:paddingHorizontal="15dp"
+            android:hint="@string/phone"
+            android:inputType="numberSigned" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
-        android:id="@+id/login_submit"
-        android:layout_width="125dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="44dp"
+        android:id="@+id/login_form_submit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Login"
         android:background="@drawable/login_button_bg"
-        android:text="Log In"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/login_form_password"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="@+id/login_form_password"
-        app:layout_constraintTop_toBottomOf="@+id/login_form_password" />
+        app:layout_constraintEnd_toEndOf="@+id/login_form_tl_phone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/login_form_tl_phone"
+        app:layout_constraintTop_toBottomOf="@+id/login_form_tl_phone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

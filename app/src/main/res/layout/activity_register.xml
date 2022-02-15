@@ -44,99 +44,133 @@
 
     <!--button to register our new user-->
 
-    <EditText
-        android:id="@+id/register_form_first_name"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="76dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/signup_instruct_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/signup_instruct_text"
+        app:layout_constraintEnd_toEndOf="@+id/register_tl_first_name"
+        app:layout_constraintStart_toStartOf="@+id/register_tl_first_name"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <EditText
-        android:id="@+id/register_form_last_name"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/register_form_first_name"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/register_form_first_name"
-        app:layout_constraintTop_toBottomOf="@+id/register_form_first_name" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_tl_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:counterMaxLength="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_instruct_text">
 
-    <EditText
-        android:id="@+id/register_form_address"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="Address"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/register_form_last_name"
-        app:layout_constraintStart_toStartOf="@+id/register_form_last_name"
-        app:layout_constraintTop_toBottomOf="@+id/register_form_last_name" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_form_first_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:hint="First Name"
+            android:maxLength="15" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/register_form_phone"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="@+id/register_form_address"
-        app:layout_constraintStart_toStartOf="@+id/register_form_address"
-        app:layout_constraintTop_toBottomOf="@+id/register_form_address" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_tl_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:counterMaxLength="15"
+        app:counterOverflowTextColor="@color/design_default_color_error"
+        app:layout_constraintTop_toBottomOf="@id/register_tl_first_name"
+        app:layout_constraintEnd_toEndOf="@+id/register_tl_first_name"
+        app:layout_constraintStart_toStartOf="@+id/register_tl_first_name">
 
-    <EditText
-        android:id="@+id/registerr_form_password"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_form_last_name"
+            android:layout_width="300dp"
+            android:minHeight="48dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:hint="Last Name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_tl_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/register_tl_last_name"
+        app:layout_constraintEnd_toEndOf="@+id/register_tl_first_name"
+        app:layout_constraintStart_toStartOf="@+id/register_tl_first_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_form_phone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="phone"
+            android:hint="Phone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/register_tl_address"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/register_tl_phone"
+        app:layout_constraintStart_toStartOf="@id/register_tl_phone"
+        app:layout_constraintEnd_toEndOf="@id/register_tl_phone">
+
+        <AutoCompleteTextView
+            android:id="@+id/register_form_add"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            app:layout_constraintEnd_toEndOf="@+id/register_tl_phone"
+            app:layout_constraintStart_toStartOf="@+id/register_tl_phone"
+            app:layout_constraintTop_toBottomOf="@+id/register_tl_phone" />
+    </com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/register_tl_password"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/register_tl_address"
+    app:layout_constraintEnd_toEndOf="@+id/register_tl_address"
+    app:layout_constraintStart_toStartOf="@+id/register_tl_address">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/register_form_password"
         android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="Password"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:autofillHints="phone"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/register_form_phone"
-        app:layout_constraintStart_toStartOf="@+id/register_form_phone"
-        app:layout_constraintTop_toBottomOf="@+id/register_form_phone" />
+        android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
+        android:hint="Password"/>
+</com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/register_tl_confirm"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/register_tl_password"
+    app:layout_constraintEnd_toEndOf="@+id/register_tl_password"
+    app:layout_constraintStart_toStartOf="@+id/register_tl_password">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/register_form_confirm"
         android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/field_input_background"
-        android:paddingHorizontal="15dp"
-        android:hint="Confirm Password"
+        android:layout_height="wrap_content"
+        android:autofillHints="phone"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/registerr_form_password"
-        app:layout_constraintStart_toStartOf="@+id/registerr_form_password"
-        app:layout_constraintTop_toBottomOf="@+id/registerr_form_password" />
+        android:hint="Confirm"/>
+</com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/register_submit"
         android:layout_width="125dp"
         android:layout_height="35dp"
-        android:layout_below="@id/register_form_confirm"
         android:layout_marginTop="64dp"
         android:background="@drawable/signup_button_bg"
         android:text="Sign Up"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/register_form_confirm"
+        app:layout_constraintEnd_toEndOf="@+id/register_tl_address"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/register_form_confirm"
-        app:layout_constraintTop_toBottomOf="@+id/register_form_confirm" />
+        app:layout_constraintStart_toStartOf="@+id/register_tl_address"
+        app:layout_constraintTop_toBottomOf="@+id/register_tl_confirm" />
 
     <TextView
         android:id="@+id/textView5"
@@ -149,13 +183,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/register_form_confirm"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/register_form_confirm"
+        app:layout_constraintEnd_toEndOf="@+id/register_submit"
+        app:layout_constraintStart_toStartOf="@+id/register_submit"
         app:layout_constraintTop_toBottomOf="@+id/register_submit">
 
         <TextView
@@ -171,7 +204,7 @@
             app:layout_constraintTop_toBottomOf="@+id/register_submit" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/signup_to_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"

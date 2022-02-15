@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Mmc Student App</string>
+    <string name="log_in_or_sign_up">Log In or Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="background_gradient">Background Gradient</string>
+    <string name="splash_screen_image1">Splash screen image1</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone</string>
+    <string name="signup_instruct_text">To become a new user, you need to fill the form below</string>
 </resources>

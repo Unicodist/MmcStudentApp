@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -31,27 +32,53 @@ import java.util.concurrent.TimeUnit;
 public class RegisterActivity extends AppCompatActivity {
     
     Button register_button;
-    EditText edit_fname, edit_lname, edit_add, edit_phone, edit_pw, edit_conf;
+    EditText edit_fname, edit_lname, edit_add, edit_phone;
     FirebaseAuth mAuth;
+    List<EditText> toBeValidated;
+    ProgressDialog loading;
     String otpID;
     String serverAdd;
+    String first_name, last_name, address, phone;
+    TextView signup_to_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        setProgressDialog();
         serverAdd = getAPIServerAddress();
         mAuth = FirebaseAuth.getInstance();
         initViews();
-        register_submit();
+        registerSubmit();
+        setSignUpToLoginListener();
+        setEditTextProps();
         
+    }
+
+    private void setEditTextProps() {
+    }
+
+    private void setProgressDialog() {
+        loading = new ProgressDialog(this);
+        loading.setTitle("Please wait");
+    }
+
+    private void setSignUpToLoginListener() {
+        signup_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent = new Intent(getApplicationContext(),LoginActivity.class);
+                loginIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(loginIntent);
+//                finish();
+            }
+        });
     }
 
     private String getAPIServerAddress() {
         SharedPreferences preferences = getSharedPreferences("DB_INFO",MODE_PRIVATE);
         serverAdd = preferences.getString("serveradd","127.0.0.1");
-        Toast.makeText(this, serverAdd, Toast.LENGTH_SHORT).show();
         return serverAdd;
     }
 
@@ -59,36 +86,32 @@ public class RegisterActivity extends AppCompatActivity {
         register_button = findViewById(R.id.register_submit);
         edit_fname = findViewById(R.id.register_form_first_name);
         edit_lname = findViewById(R.id.register_form_last_name);
-        edit_add = findViewById(R.id.register_form_address);
+        edit_add = findViewById(R.id.register_form_add);
         edit_phone = findViewById(R.id.register_form_phone);
-        edit_pw = findViewById(R.id.registerr_form_password);
-        edit_conf = findViewById(R.id.register_form_confirm);
+        signup_to_login = findViewById(R.id.signup_to_login);
         
     }
-    public void register_submit(){
+
+    public void registerSubmit(){
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                List<EditText> toBeValidated = Arrays.asList(edit_add,edit_conf,edit_pw,edit_phone,edit_lname,edit_fname);
+                toBeValidated = Arrays.asList(edit_add,edit_phone,edit_lname,edit_fname);
 
-                if(!validateFields(toBeValidated)) return;
-
-                String first_name, last_name, address, phone, password, confirm;
+                if(!validateFields()) return;
 
                 first_name = edit_fname.getText().toString();
                 last_name = edit_lname.getText().toString();
                 address = edit_add.getText().toString();
                 phone = edit_phone.getText().toString();
-                password = edit_pw.getText().toString();
-                confirm = edit_conf.getText().toString();
 
                 sendPhoneAuth(phone);
             }
         });
     }
 
-    private boolean validateFields(List<EditText> toBeValidated) {
+    private boolean validateFields() {
         for (EditText e :
                 toBeValidated) {
             if(TextUtils.isEmpty(e.getText())) return false;
@@ -98,25 +121,31 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void sendPhoneAuth(String phone){
 
+        loading.setMessage("We are sending a code to your device");
+        loading.setCanceledOnTouchOutside(false);
+        loading.show();
+
         PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-//                registerUser();
-                Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+
+                loading.dismiss();
+
                 otpID = s;
                 Intent otpIntent = new Intent(RegisterActivity.this,OtpPage.class);
-                otpIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 otpIntent.putExtra("otpid",otpID);
+                otpIntent.putExtra("phone",phone);
                 startActivity(otpIntent);
+                finish();
             }
-
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                loading.dismiss();
             }
         };
 
@@ -129,7 +158,4 @@ public class RegisterActivity extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
-//    private void registerUser() {
-//        JsonObjectRequest request =
-//    }
 }
