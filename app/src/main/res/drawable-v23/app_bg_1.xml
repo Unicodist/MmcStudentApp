@@ -13,14 +13,14 @@
         android:drawable="@drawable/ell"
         android:height="400dp"
         android:width="400dp"
-        android:left="-200dp"
-    android:top="-200dp"
+        android:start="-200dp"
+        android:top="-200dp"
         android:gravity="start|top"/>
     <item
         android:drawable="@drawable/ell"
         android:height="400dp"
         android:width="400dp"
-        android:right="-200dp"
+        android:end="-200dp"
         android:bottom="-200dp"
         android:gravity="end|bottom"/>
 </layer-list>

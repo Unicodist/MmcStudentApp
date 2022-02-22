@@ -1,8 +1,7 @@
-package com.prabidhinepal.mmccomm;
+package com.prabidhinepal.mmccomm.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -20,14 +19,13 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.prabidhinepal.mmccomm.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class OtpPage extends AppCompatActivity {

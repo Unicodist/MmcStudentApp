@@ -1,11 +1,12 @@
-package com.prabidhinepal.mmccomm;
+package com.prabidhinepal.mmccomm.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
+
+import com.prabidhinepal.mmccomm.R;
 
 public class AuthFrontActivity extends AppCompatActivity {
 

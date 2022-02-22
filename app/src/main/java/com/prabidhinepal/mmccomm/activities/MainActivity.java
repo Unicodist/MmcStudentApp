@@ -1,4 +1,4 @@
-package com.prabidhinepal.mmccomm;
+package com.prabidhinepal.mmccomm.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.prabidhinepal.mmccomm.R;
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout thisLayout;

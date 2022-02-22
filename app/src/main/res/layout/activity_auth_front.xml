@@ -6,33 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_bg_1"
-    tools:context=".AuthFrontActivity">
-
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="356dp"
-        android:rotation="33"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ell"
-        android:contentDescription="@string/background_gradient" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="376dp"
-        android:rotation="218"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ell"
-        tools:ignore="ImageContrastCheck"
-        android:contentDescription="@string/background_gradient"/>
+    tools:context=".activities.AuthFrontActivity">
 
     <TextView
         android:id="@+id/textView3"

@@ -1,6 +1,7 @@
-package com.prabidhinepal.mmccomm;
+package com.prabidhinepal.mmccomm.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.StringDef;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -9,22 +10,21 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.prabidhinepal.mmccomm.R;
+import com.prabidhinepal.mmccomm.dto.LoginModel;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -32,13 +32,14 @@ import java.util.concurrent.TimeUnit;
 public class RegisterActivity extends AppCompatActivity {
     
     Button register_button;
-    EditText edit_fname, edit_lname, edit_add, edit_phone;
+    TextInputEditText edit_name, edit_phone, edit_password, edit_confirm;
+    AutoCompleteTextView edit_add;
     FirebaseAuth mAuth;
-    List<EditText> toBeValidated;
+    List<TextInputEditText> toBeValidatedTE;
     ProgressDialog loading;
     String otpID;
     String serverAdd;
-    String first_name, last_name, address, phone;
+    String name, address, phone;
     TextView signup_to_login;
 
     @Override
@@ -46,22 +47,23 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        setProgressDialog();
-        serverAdd = getAPIServerAddress();
-        mAuth = FirebaseAuth.getInstance();
         initViews();
+        setProgressDialog();
         registerSubmit();
         setSignUpToLoginListener();
         setEditTextProps();
-        
+
+        serverAdd = getAPIServerAddress();
+        mAuth = FirebaseAuth.getInstance();
     }
 
-    private void setEditTextProps() {
-    }
+    private void setEditTextProps() { }
 
     private void setProgressDialog() {
         loading = new ProgressDialog(this);
         loading.setTitle("Please wait");
+
+        LoginModel lfvm;
     }
 
     private void setSignUpToLoginListener() {
@@ -84,12 +86,12 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void initViews(){
         register_button = findViewById(R.id.register_submit);
-        edit_fname = findViewById(R.id.register_form_first_name);
-        edit_lname = findViewById(R.id.register_form_last_name);
+        edit_name = findViewById(R.id.register_form_name);
         edit_add = findViewById(R.id.register_form_add);
         edit_phone = findViewById(R.id.register_form_phone);
+        edit_password = findViewById(R.id.register_form_password);
+        edit_confirm = findViewById(R.id.register_form_confirm);
         signup_to_login = findViewById(R.id.signup_to_login);
-        
     }
 
     public void registerSubmit(){
@@ -97,12 +99,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                toBeValidated = Arrays.asList(edit_add,edit_phone,edit_lname,edit_fname);
-
                 if(!validateFields()) return;
 
-                first_name = edit_fname.getText().toString();
-                last_name = edit_lname.getText().toString();
+                name = edit_name.getText().toString();
                 address = edit_add.getText().toString();
                 phone = edit_phone.getText().toString();
 
@@ -112,8 +111,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validateFields() {
+        toBeValidatedTE = Arrays.asList(edit_phone,edit_name);
         for (EditText e :
-                toBeValidated) {
+                toBeValidatedTE) {
             if(TextUtils.isEmpty(e.getText())) return false;
         }
         return true;

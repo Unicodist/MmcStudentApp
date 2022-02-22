@@ -1,8 +1,10 @@
-package com.prabidhinepal.mmccomm;
+package com.prabidhinepal.mmccomm.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.prabidhinepal.mmccomm.R;
 
 public class DashboardActivity extends AppCompatActivity {
 

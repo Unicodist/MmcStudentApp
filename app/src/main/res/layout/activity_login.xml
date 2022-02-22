@@ -5,31 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_bg_1"
-    tools:context=".LoginActivity">
-
-
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="348dp"
-        android:rotation="33"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/background_gradient"
-        app:srcCompat="@drawable/ell" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="380dp"
-        android:rotation="218"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/background_gradient"
-        app:srcCompat="@drawable/ell" />
+    tools:context=".activities.LoginActivity">
 
     <TextView
         android:id="@+id/login_layout_title"
@@ -84,6 +60,34 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_form_tl_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:helperText="Required"
+        app:helperTextEnabled="false"
+        app:helperTextTextColor="@color/design_default_color_error"
+        app:layout_constraintEnd_toEndOf="@+id/login_form_tl_phone"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/login_form_tl_phone"
+        app:layout_constraintTop_toBottomOf="@+id/login_form_tl_phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_form_pass"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/field_input_background"
+            android:hint="@string/phone"
+            android:inputType="numberSigned"
+            android:maxLength="10"
+            android:paddingHorizontal="15dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
@@ -91,10 +95,10 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="Login"
         android:background="@drawable/login_button_bg"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="@+id/login_form_tl_phone"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/login_form_tl_phone"
-        app:layout_constraintTop_toBottomOf="@+id/login_form_tl_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/login_form_tl_pass" />
 </androidx.constraintlayout.widget.ConstraintLayout>

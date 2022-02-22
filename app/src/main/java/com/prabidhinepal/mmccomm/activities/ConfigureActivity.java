@@ -1,17 +1,18 @@
-package com.prabidhinepal.mmccomm;
+package com.prabidhinepal.mmccomm.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.window.SplashScreenView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.prabidhinepal.mmccomm.R;
+import com.prabidhinepal.mmccomm.activities.AuthFrontActivity;
 
 public class ConfigureActivity extends AppCompatActivity {
 
     Intent registerIntent;
     SharedPreferences preferences;
-//    SplashScreenView splashScreenView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,7 @@ public class ConfigureActivity extends AppCompatActivity {
 
         initValues();
 
-        registerIntent = new Intent(getApplicationContext(),AuthFrontActivity.class);
+        registerIntent = new Intent(getApplicationContext(), AuthFrontActivity.class);
         startActivity(registerIntent);
     }
     private void initValues(){
